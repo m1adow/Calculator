@@ -28,69 +28,56 @@ namespace Calculator_WPF_
 
             aCButton.Click += ACButton_Click;
             negativeButton.Click += NegativeButton_Click;
+            percentageButton.Click += PercentageButton_Click;
+            equalButton.Click += EqualButton_Click;
+        }
+
+        private void EqualButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PercentageButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+            {
+                _lastNumber = _lastNumber / 100;
+                resultLabel.Content = _lastNumber.ToString();
+            }
         }
 
         private void NegativeButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+            {
+                _lastNumber = -1 * _lastNumber;
+                resultLabel.Content = _lastNumber.ToString();
+            }
         }
 
-        private void ACButton_Click(object sender, RoutedEventArgs e)
+        private void ACButton_Click(object sender, RoutedEventArgs e) => resultLabel.Content = "0";
+
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
-            resultLabel.Content = "0";
+            if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+            {
+                resultLabel.Content = "0";
+            }
         }
 
-        private void sevenButton_Click(object sender, RoutedEventArgs e)
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
+            string? buttonContent = (sender as Button)?.Content.ToString();
+
+            if (buttonContent is null)
+                return;
+
+            int selectedValue = int.Parse(buttonContent);
+
             if (resultLabel.Content.ToString() == "0")
-                resultLabel.Content = "7";
+                resultLabel.Content = $"{selectedValue}";
             else
-                resultLabel.Content += "7";
-        }
-
-        private void zeroButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void oneButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void twoButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void threeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void fourButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void fiveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void sixButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void eightButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void nineButton_Click(object sender, RoutedEventArgs e)
-        {
-
+                resultLabel.Content += $"{selectedValue}";
         }
     }
 }
