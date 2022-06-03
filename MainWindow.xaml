@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator_WPF_"
         mc:Ignorable="d"
-        Title="MainWindow" Height="525" Width="350">
+        Title="MainWindow" Height="525" Width="350"
+        Background="Black">
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>

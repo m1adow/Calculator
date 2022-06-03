@@ -37,6 +37,7 @@
 
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="70"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
     </Application.Resources>
 </Application>
