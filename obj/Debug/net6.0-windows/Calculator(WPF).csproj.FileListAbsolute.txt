@@ -19,3 +19,4 @@ D:\study\codes VS\Calculator(WPF)\obj\Debug\net6.0-windows\refint\Calculator(WPF
 D:\study\codes VS\Calculator(WPF)\obj\Debug\net6.0-windows\Calculator(WPF).pdb
 D:\study\codes VS\Calculator(WPF)\obj\Debug\net6.0-windows\Calculator(WPF).genruntimeconfig.cache
 D:\study\codes VS\Calculator(WPF)\obj\Debug\net6.0-windows\ref\Calculator(WPF).dll
+D:\study\codes VS\Calculator(WPF)\obj\Debug\net6.0-windows\App.baml
